@@ -2,7 +2,6 @@
     "logLevel": 0,
     "port": 80,
     "baseUrl": "http://localhost",
-    "token": "bWlraGFpbGJyYWdpbjpiYXJob3RraTc3Nw==",
     "maxPages": 2,
     "maxTry": 3,
     "debug": false,
