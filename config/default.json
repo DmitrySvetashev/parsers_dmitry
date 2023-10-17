@@ -1,0 +1,15 @@
+{
+    "logLevel": 0,
+    "port": 80,
+    "baseUrl": "http://localhost",
+    "token": "bWlraGFpbGJyYWdpbjpiYXJob3RraTc3Nw==",
+    "maxPages": 2,
+    "maxTry": 3,
+    "debug": false,
+    "gals": {
+        "iskraBaseUrl": "https://hals-development.ru",
+        "flatListClass": ".flat-list",
+        "flatInfoClass": ".grid-item__body",
+        "flatPlanImg": ".params-flat__plan"
+    }
+}

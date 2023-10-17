@@ -1,0 +1,24 @@
+{
+  "name": "test-apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app.js",
+    "dev": "nodemon app.js",
+    "gals": "nodemon gals.js"
+  },
+  "author": "Dmitry Svetashev <dmitry.svetashev@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "config": "^3.3.9",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "htmlparser2": "^9.0.0",
+    "puppeteer": "^21.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
