@@ -1,14 +1,15 @@
 const { Router } = require('express');
 const router = Router();
-const galsAPIfunc = require('../gals')
+const parserGals = require('../parsers/gals');
 
 router.get(
     '/gals/parse',
     [
     ],
     async (req, res) => {
-        const result = await galsAPIfunc.iskraParser();
-        return res.status(201).json({result: 'OK'});
+        const result = await parserGals.iskraParser();
+        console.log(result);
+        return res.status(201).json({count: result.length, flats :result });
     }
 )
 

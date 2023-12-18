@@ -1,9 +1,6 @@
 {
-    "logLevel": 0,
-    "port": 80,
+    "port": 88,
     "baseUrl": "http://localhost",
-    "maxPages": 2,
-    "maxTry": 3,
     "debug": false,
     "gals": {
         "iskraBaseUrl": "https://hals-development.ru",

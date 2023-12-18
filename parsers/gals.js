@@ -23,10 +23,6 @@ async function iskraParser() {
                 result = {};
                 const id = a.getAttribute('href');
                 result.id = id;
-//                const place = a.querySelector('.grid-item__body > .grid-item2__info').innerHTML;
-//                const area = a.querySelector('.grid-item__body > .grid-item2__info2').innerHTML;
-//                const price = a.querySelector('.grid-item__body > .grid-item2__info3 > .default-price').innerHTML;
-
                 const place = a.querySelector('.grid-item__body > .grid-item2__info') ? a.querySelector('.grid-item__body > .grid-item2__info').innerHTML.replace(/(<!-- -->)/g,'').replace(/\//g,';').split(';') : null;
                 result.number = place ? place[0].trim() : '';
                 result.section = place ? place[1].trim() : '';
@@ -46,7 +42,7 @@ async function iskraParser() {
             b => b.getAttribute('class'))
         )
         console.log(pageButton);
-        if (pageButton[pageButton.length-2] === 'active') break
+        if (pageButton[pageButton.length-2] === 'active' || pageButton.length == 0) break
         else await page.click("a[rel='next']");
     }
     page.close();
@@ -78,11 +74,14 @@ async function iskraParser() {
         console.log(flatsList[f]);
     }
     console.log(flatsList);
+    var result = flatsList;
 //    fs.writeFile("/srv/6feeds/public/parsing/result.json", JSON.stringify(flatsList), (err) => {
-    fs.writeFile("result.json", JSON.stringify(flatsList), (err) => {
-            if (err) console.log(err);
-        else console.log("File written successfully\n");
+    await fs.writeFile("result.json", JSON.stringify(flatsList), (err) => {
+            if (err) 
+                console.log(err);
+            else console.log("File written successfully\n");
     });
+    return result;
 }
 
-iskraParser();
+module.exports.iskraParser = iskraParser;
