@@ -6,6 +6,7 @@
         "iskraBaseUrl": "https://hals-development.ru",
         "flatListClass": ".flat-list",
         "flatInfoClass": ".grid-item__body",
-        "flatPlanImg": ".params-flat__plan"
+        "flatPlanImg": ".params-flat__plan",
+        "pathToFile": "/srv/6feeds/public/parsing/biznes-park-iskra.json"
     }
 }

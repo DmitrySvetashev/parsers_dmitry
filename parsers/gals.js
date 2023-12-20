@@ -73,15 +73,12 @@ async function iskraParser() {
         page.close();
         console.log(flatsList[f]);
     }
-    console.log(flatsList);
-    var result = flatsList;
-//    fs.writeFile("/srv/6feeds/public/parsing/result.json", JSON.stringify(flatsList), (err) => {
-    await fs.writeFile("result.json", JSON.stringify(flatsList), (err) => {
+    await fs.writeFile(galsAPI.pathToFile, JSON.stringify(flatsList), (err) => {
             if (err) 
                 console.log(err);
             else console.log("File written successfully\n");
     });
-    return result;
+    return flatsList;
 }
 
 module.exports.iskraParser = iskraParser;
