@@ -1,6 +1,6 @@
 {
     "port": 88,
-    "baseUrl": "http://6feeds",
+    "baseUrl": "6feeds.ru",
     "debug": false,
     "gals": {
         "iskraBaseUrl": "https://hals-development.ru",

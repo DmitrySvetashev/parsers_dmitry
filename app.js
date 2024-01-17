@@ -13,8 +13,8 @@ app.use('/api/v1',require('./routes/backend'));
 
 async function start() {
     // запуск таймера на каждые 6 часов
-    const timerJob = new CronJob('0 0 */6 * * *',function(){ parserGals.iskraParser() });
-    timerJob.start();
+    //const timerJob = new CronJob('0 0 */6 * * *',function(){ parserGals.iskraParser() });
+    //timerJob.start();
     // слушаем команду
     app.listen(PORT, () => console.log('server runing on ',PORT,' port'));
 }
