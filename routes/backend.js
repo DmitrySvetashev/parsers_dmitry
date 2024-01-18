@@ -21,10 +21,10 @@ router.get(
     ],
     async (req, res) => {
         console.log('parsing bnovo');
-        const dateStart = req.params.date_start || null;
-        const dateEnd = req.params.date_end || null;
-        const adults = req.params.adults || null;
-        const result = await bnovo.bnovoParser();
+        const dateStart = req.query.date_start || null;
+        const dateEnd = req.query.date_end || null;
+        const adults = req.query.adults || null;
+        const result = await bnovo.bnovoParser(dateStart,dateEnd,adults);
         console.log(result);
         return res.status(201).json( result );
     }
