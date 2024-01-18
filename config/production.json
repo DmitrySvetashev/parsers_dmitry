@@ -8,5 +8,9 @@
         "flatInfoClass": ".grid-item__body",
         "flatPlanImg": ".params-flat__plan",
         "pathToFile": "/srv/6feeds/public/parsing/biznes-park-iskra.json"
+    },
+    "bnovo": {
+        "baseUrl": "https://reservationsteps.ru/rooms/index/d0ce239f-df14-4aa8-8ccf-83036c8cbb01?lang=ru&colorSchemePreview=0&onlyrooms=&name=&surname=&email=&phone=&orderid=&servicemode=0&firstroom=0&vkapp=&insidePopup=0",
+        "pathToFile": "/home/parsers/bnovo.json"
     }
 }

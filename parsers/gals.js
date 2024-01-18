@@ -1,8 +1,6 @@
-const axios = require('axios');
 const config = require('config');
 const { json } = require('express');
 const galsAPI = config.get('gals');
-const htmlparser2 = require ('htmlparser2');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
@@ -11,7 +9,7 @@ const fs = require('fs');
 async function iskraParser() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(galsAPI.iskraBaseUrl+'/params/biznes-park-iskra');
+    await page.goto(galsAPI.baseUrl+'/params/biznes-park-iskra');
     var flatsList = [];
     for (var p=0; p<10; p++) {
         console.log(`page ${p}`);
@@ -50,7 +48,7 @@ async function iskraParser() {
     for (var f=0; f<flatsList.length; f++) {
         console.log(`flat ${f}`);
         const page = await browser.newPage();
-        await page.goto(galsAPI.iskraBaseUrl+flatsList[f].id);
+        await page.goto(galsAPI.baseUrl+flatsList[f].id);
         await page.waitForSelector(galsAPI.flatPlanImg);
         await page.waitForNetworkIdle();
         const flatPlanUrl = await page.evaluate(() => { return document.querySelector('.params-flat__plan > div > img').getAttribute('src'); });
@@ -68,8 +66,8 @@ async function iskraParser() {
         ));
         console.log(decorsUrl);
         flatsList[f].flatPlan = 'https:'+flatPlanUrl;
-        flatsList[f].foorPlan = galsAPI.iskraBaseUrl+floorPlanUrl;
-        flatsList[f].decoration = decorsUrl.filter((el, ndx, arr) => arr.findIndex(arrEl => arrEl === el) === ndx).map(el => galsAPI.iskraBaseUrl+el);
+        flatsList[f].foorPlan = galsAPI.baseUrl+floorPlanUrl;
+        flatsList[f].decoration = decorsUrl.filter((el, ndx, arr) => arr.findIndex(arrEl => arrEl === el) === ndx).map(el => galsAPI.baseUrl+el);
         page.close();
         console.log(flatsList[f]);
     }
