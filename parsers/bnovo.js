@@ -18,7 +18,10 @@ async function bnovoParser(dateStart, dateEnd, adults = 1) {
         dateEnd = dateToStr(tom);
     }
     console.log(`dateStart > ${dateStart}\ndateEnd > ${dateEnd}\nadults > ${adults}`);
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: ['--no-sandbox'],
+        timeout: 10000,
+      });
     console.log('puppeteer launched');
     const page = await browser.newPage();
     console.log('puppeteer newPage');
