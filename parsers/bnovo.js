@@ -91,7 +91,13 @@ async function bnovoParser(dateStart, dateEnd, adults = 1) {
                 console.log(err);
             else console.log("File written successfully\n");
     });
-    return rooms;
+    return {
+        'date_start': dateStart,
+        'date_end': dateEnd,
+        'adults': adults,
+        'counts': rooms.length,
+        'rooms': rooms
+    };
 }
 
 module.exports.bnovoParser = bnovoParser;
