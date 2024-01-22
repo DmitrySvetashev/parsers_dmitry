@@ -1,7 +1,7 @@
 {
     "port": 3000,
     "baseUrl": "6feeds.ru",
-    "serverUrl": "d.sve.fvds.ru",
+    "serverUrl": "6feeds.ru",
     "debug": false,
     "gals": {
         "iskraBaseUrl": "https://hals-development.ru",
