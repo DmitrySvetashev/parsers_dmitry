@@ -14,9 +14,10 @@ async function start() {
         //запуск таймера на каждые 6 часов
         const timerJob = new CronJob('0 0 */6 * * *',function(){ parserGals.iskraParser() });
         timerJob.start();
+        app.listen(PORT, () => console.log('developer server runing on ',PORT,' port'));
 
         // запуск сервера
-        https
+/*        https
         .createServer(
             {
                 key: fs.readFileSync(`/etc/letsencrypt/live/${config.get('serverUrl')}/privkey.pem`),
@@ -27,7 +28,7 @@ async function start() {
         .listen(PORT, () => {
             console.log('production server runing on ',PORT,' port');
         });
-    }
+    */    }
     else app.listen(PORT, () => console.log('developer server runing on ',PORT,' port'));
 }
 
